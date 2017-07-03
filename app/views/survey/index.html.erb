@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My experiment</title>
+    <%= stylesheet_link_tag "jspsych.css" %>
+    <%= javascript_include_tag "jquery.min" %>
+    <%= javascript_include_tag "jspsych" %>
+    <%= javascript_include_tag "jspsych-text" %>
+    <%= javascript_include_tag "jspsych-single-stim" %>
+    <h1> I don't think this stuff is working</h1>
+  </head>
+  <body>
+  </body>
+  <script> 
+
+  var welcome_block = {
+    type: "text",
+    text: "<img src='/assets/surveypic1.png'></img>" +
+    "Welcome to the survey. Press any key to begin."   
+  };
+
+  var Q_1 = {
+    type:"single-stim",
+    choices: ['1','2','3','4','5'],
+    timeline: [
+        {stimulus: "/assets/Capture1.PNG"},
+         {stimulus: "/assets/Capture2.PNG"},
+         {stimulus: "/assets/Capture3.PNG"},
+              ]
+  };
+
+
+
+
+  var timeline = [];
+  timeline.push(welcome_block);
+  timeline.push(Q_1);
+ 
+
+  /* start the experiment */
+  jsPsych.init({
+    timeline: timeline,
+    fullscreen: true,
+    on_finish: function() {
+      jsPsych.data.displayData();
+    }
+  });
+</script>
+</html>

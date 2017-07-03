@@ -13,3 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery.min.js.erb
+//= require jspsych.js.erb
+//= require jspsych-text.js.erb
+//= require jspsych-single-stim.js.erb
